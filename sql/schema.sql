@@ -1,0 +1,57 @@
+-- CREATE DATABASE IF NOT EXISTS eventapp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- USE eventapp;
+
+-- -- users table
+-- CREATE TABLE users (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   fname VARCHAR(100) NOT NULL,
+--   lname VARCHAR(100) NOT NULL,
+--   email VARCHAR(255) NOT NULL UNIQUE,
+--   mobile VARCHAR(15),
+--   password VARCHAR(255) NOT NULL,
+--   dob DATE,
+--   address TEXT,
+--   pincode VARCHAR(20),
+--   city VARCHAR(100),
+--   state VARCHAR(100),
+--   region VARCHAR(100),
+--   is_admin TINYINT(1) DEFAULT 0,
+--   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- -- events table
+-- CREATE TABLE events (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   title VARCHAR(200) NOT NULL,
+--   description TEXT,
+--   location VARCHAR(200),
+--   start_datetime DATETIME,
+--   end_datetime DATETIME,
+--   capacity INT DEFAULT 100,
+--   price DECIMAL(10,2) DEFAULT 0.00,
+--   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
+
+-- -- bookings table
+-- CREATE TABLE bookings (
+--   id INT AUTO_INCREMENT PRIMARY KEY,
+--   user_id INT NOT NULL,
+--   event_id INT NOT NULL,
+--   seats INT DEFAULT 1,
+--   booked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--   status ENUM('booked','cancelled') DEFAULT 'booked',
+--   notes TEXT,
+--   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+--   FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE
+-- );
+
+-- -- Sample admin user (password: ChangeMe123!)
+-- INSERT INTO users (fname,lname,email,mobile,password,is_admin)
+-- VALUES ('Admin','User','admin@example.com','9999999999', 
+--         -- PHP password_hash of 'ChangeMe123!' is below; replace with your own or re-hash
+--        '$2y$10$EXAMPLE_PLACEHOLDER_REPLACE_WITH_HASH', 1);
+
+-- -- Sample events
+-- INSERT INTO events (title,description,location,start_datetime,end_datetime,capacity,price) VALUES
+-- ('City Food Festival','A food & culture festival','Central Park','2025-11-10 10:00:00','2025-11-10 18:00:00',500,0.00),
+-- ('Tech Meetup - Build & Learn','Hands-on coding sessions','Community Hall','2025-11-20 09:30:00','2025-11-20 16:00:00',150,199.00);
