@@ -55,4 +55,4 @@ Follow these steps to run the project locally:
 
 **Hanisha Vaghela**
 - 📍 B.Sc IT Student | PHP & Django Developer
-- 📧 https://www.linkedin.com/in/hanisha-vaghela-b28091360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+- 📧 https://www.linkedin.com/in/hanisha-vaghela-b28091360/
